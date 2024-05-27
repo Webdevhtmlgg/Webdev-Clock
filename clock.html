@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Philippines Time</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-image: url('7.jpg');
+            background-size:cover;
+            background-color:black;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: white;
+            font-size: 150px;
+        }
+
+        #time-container {
+            font-size: 150px;
+            margin-top: 150px;
+            color:white;
+        }
+    </style>
+    <script>
+        function displayPhilippinesTime() {
+            var date = new Date();
+            var options = {timeZone: 'Asia/Manila', hour24: false};
+            var phTime = date.toLocaleString('en-US', options);
+            document.getElementById('philippines-time').innerText = 'Current time in the Philippines: ' + phTime;
+        }
+
+        // Update time every second
+        setInterval(displayPhilippinesTime, 1000);
+    </script>
+</head>
+<body>
+    <h1>Webdev Philippines Clock</h1>
+    <div id="time-container">
+        <p id="philippines-time"></p>
+    </div>
+</body>
+</html>
+
